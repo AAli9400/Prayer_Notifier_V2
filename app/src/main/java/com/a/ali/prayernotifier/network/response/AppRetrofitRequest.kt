@@ -6,7 +6,7 @@ import retrofit2.Call
 
 class AppRetrofitRequest<T> {
     fun makeRequest(request: () -> Call<T>): LiveData<AppRetrofitResponse<T>> =
-            MutableLiveData<AppRetrofitResponse<T>>().also {
-                request().enqueue(AppRetrofitCallback(it))
-            }
+        MutableLiveData<AppRetrofitResponse<T>>().also {
+            request().enqueue(AppRetrofitCallback(it))
+        }
 }
